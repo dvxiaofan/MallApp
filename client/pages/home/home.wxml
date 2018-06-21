@@ -15,3 +15,15 @@
 	<view class="list-title-text">春季推荐</view>
 	<image class="list-title-line" src="../../images/line-black.png" />
 </view>
+
+<view class="product-row" wx:for="{{productList}}" wx:key="id" wx:if="{{index%2 === 1}}">
+	<navigator class="product-card" wx:for="{{[productList[index], productList[index + 1]]}}" wx:key="id" wx:for-index="pindex" wx:for-item="pitme">
+		<image class="product-image" src="{{pitme.image}}" mode="widthFix" />
+		<view class="product-name">{{pitme.name}}</view>
+		<view class="product-meta">
+			<view class="product-money">￥</view>
+			<view class="product-price">{{pitme.price}}</view>
+			<view class="product-add">+</view>
+		</view>
+	</navigator>
+</view>
