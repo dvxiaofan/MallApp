@@ -31,7 +31,7 @@
   "window":{
     "backgroundColor":"#F6F6F6",
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#eee",
     "navigationBarTitleText": "Wafer Quick Start",
     "navigationBarTextStyle":"black"
   }
