@@ -1,5 +1,6 @@
 
 const qcloud = require('../../vendor/wafer2-client-sdk/index');
+const config = require('../../config.js');
 
 Page({
 	data:{
@@ -8,7 +9,7 @@ Page({
 	onLoad:function(options){
 		// 生命周期函数--监听页面加载
 		qcloud.request({
-			url: 'https://r3simd4m.qcloud.la/weapp/product',
+			url: config.service.productListUrl,
 			success: result => {
 				this.setData({
 					productList: result.data.data
