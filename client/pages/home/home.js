@@ -1,35 +1,48 @@
+
+const qcloud = require('../../vendor/wafer2-client-sdk/index');
+
 Page({
-	data: {
-		productList: [{
-			id: 1,
-			image: 'https://s3.cn-north-1.amazonaws.com.cn/u-img/product1.jpg',
-			name: '商品1',
-			price: 100,
-			source: '国内·广东',
-		}, {
-			id: 2,
-			image: 'https://s3.cn-north-1.amazonaws.com.cn/u-img/product2.jpg',
-			name: '商品2',
-			price: 200,
-			source: '国内·广东',
-		}, {
-			id: 3,
-			image: 'https://s3.cn-north-1.amazonaws.com.cn/u-img/product3.jpg',
-			name: '商品3',
-			price: 300,
-			source: '国内·广东',
-		}, {
-			id: 4,
-			image: 'https://s3.cn-north-1.amazonaws.com.cn/u-img/product4.jpg',
-			name: '商品4',
-			price: 400,
-			source: '国内·广东',
-		}, {
-			id: 5,
-			image: 'https://s3.cn-north-1.amazonaws.com.cn/u-img/product5.jpg',
-			name: '商品5',
-			price: 500,
-			source: '国内·广东',
-		}],
+	data:{
+		productList: [],
+	},
+	onLoad:function(options){
+		// 生命周期函数--监听页面加载
+		qcloud.request({
+			url: 'https://r3simd4m.qcloud.la/weapp/product',
+			success: result => {
+				this.setData({
+					productList: result.data.data
+				})
+			},
+			fail: result => {
+				console.log('error');
+			}
+		})
+	},
+	onReady:function(){
+		// 生命周期函数--监听页面初次渲染完成
+	},
+	onShow:function(){
+		// 生命周期函数--监听页面显示
+	},
+	onHide:function(){
+		// 生命周期函数--监听页面隐藏
+	},
+	onUnload:function(){
+		// 生命周期函数--监听页面卸载
+	},
+	onPullDownRefresh: function() {
+		// 页面相关事件处理函数--监听用户下拉动作
+	},
+	onReachBottom: function() {
+		// 页面上拉触底事件的处理函数
+	},
+	onShareAppMessage: function() {
+		// 用户点击右上角分享
+		return {
+			title: 'title', // 分享标题
+			desc: 'desc', // 分享描述
+			path: 'path' // 分享路径
+		}
 	}
 })
