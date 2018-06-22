@@ -6,5 +6,31 @@
 	},
 	"appid": "wx56fd652ae18cf62b",
 	"projectname": "%E5%95%86%E5%9F%8E%E5%BA%94%E7%94%A8",
-	"condition": {}
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "详情页",
+					"pathName": "pages/detail/detail"
+				}
+			]
+		}
+	}
 }
