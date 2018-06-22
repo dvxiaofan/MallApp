@@ -1,44 +1,24 @@
 
-const qcloud = require('../../vendor/wafer2-client-sdk/index');
-const config = require('../../config');
-
 Page({
 	data:{
-		productList: [],
+		product: {
+			id: 1,
+			image: 'https://product-1256088332.cos.ap-guangzhou.myqcloud.com/product2.jpg',
+			name: '这是一个牛逼的产品',
+			price: 480.5,
+			comments: [
+				{
+					icon: '../../images/xiaofan.png', 
+					uName: 'xiaofan', 
+					time: '2018-06-22', 
+					text: '非常好， 棒极了，下次还买'
+				}
+			]
+		},
 	},
 	onLoad:function(options){
 		// 生命周期函数--监听页面加载
-		this.getProductList();
 	},
-	// 获取商品列表数据
-	getProductList() {
-		wx.showLoading({
-			title: '商品数据加载中。。。'
-		})
-		qcloud.request({
-			url: config.service.productListUrl,
-			success: result => {
-				wx.hideLoading();
-				let data = result.data;
-				if (!data.code) {
-					this.setData({
-						productList: data.data
-					})
-				} else {
-					wx.showToast({
-						title: '商品数据加载失败！'
-					})
-				}
-			},
-			fail: result => {
-				wx.hideLoading();
-				wx.showToast({
-					title: '商品数据加载失败！'
-				})
-			}
-		})
-	},
-
 	onReady:function(){
 		// 生命周期函数--监听页面初次渲染完成
 	},

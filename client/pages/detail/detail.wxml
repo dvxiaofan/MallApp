@@ -20,7 +20,7 @@
 		</view>
 	</view>
 	<view class="comment-entry">
-		<view class="comment-button">
+		<view class="comment-button" bind:tap='goComment'>
 			<view class="comment-title">已买评价</view>
 			<view class="comment-count">1条</view>
 			<image class="comment-arrow" src="../../images/grey-arrow.png" />

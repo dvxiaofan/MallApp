@@ -1,0 +1,18 @@
+
+.product-card {
+	background: #fff;
+	padding-bottom: 15rpx;
+	box-shadow: 0 2rpx 13rpx 15rpx rgba(0, 0, 0, .02);
+	display: flex;
+
+}
+
+.product-image {
+	width: 180rpx;
+	height: 180rpx;
+	margin: 15rpx;
+}
+
+.product-info {
+	margin: 15rpx;
+}

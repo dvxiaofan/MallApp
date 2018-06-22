@@ -43,6 +43,12 @@ Page({
 		// 生命周期函数--监听页面加载
 		this.getProduct(options.id);
 	},
+	goComment() {
+		wx.navigateTo({
+			url: '../comment/comment'
+		})
+		
+	},
 	onReady:function(){
 		// 生命周期函数--监听页面初次渲染完成
 	},

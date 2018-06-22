@@ -2,10 +2,10 @@
   "pages":[
     "pages/home/home",
     "pages/detail/detail",
+    "pages/comment/comment",
     "pages/order/order",
     "pages/trolley/trolley",
     "pages/user/user"
-
   ],
   "tabBar": {
     "list": [{
