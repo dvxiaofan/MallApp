@@ -1,10 +1,10 @@
 {
   "pages":[
     "pages/home/home",
+    "pages/detail/detail",
     "pages/order/order",
     "pages/trolley/trolley",
-    "pages/user/user",
-    "pages/detail/detail"
+    "pages/user/user"
 
   ],
   "tabBar": {

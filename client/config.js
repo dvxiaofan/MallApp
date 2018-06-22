@@ -24,7 +24,10 @@ var config = {
         uploadUrl: `${host}/weapp/upload`,
 
         // 获取商品列表
-        productListUrl: `${host}/weapp/product`
+        productListUrl: `${host}/weapp/product`,
+
+        // 获取商品详情数据
+        productDetailUrl: `${host}/weapp/product/`
     }
 };
 
