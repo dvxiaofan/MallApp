@@ -7,3 +7,28 @@
 			<view class="product-price">{{product.price}}</view>
 	</view>
 </view>
+
+<view class="info-card">
+	<view class="advantage-list">
+		<view class="advantage-item">
+			<image class="advantage-icon" src="../../images/check-yellow.png" />
+			<view class="advantage-text">七天免费退货</view>
+		</view>
+		<view class="advantage-item">
+			<image class="advantage-icon" src="../../images/check-yellow.png" />
+			<view class="advantage-text">24小时发货并配送运费险</view>
+		</view>
+	</view>
+	<view class="comment-entry">
+		<view class="comment-button">
+			<view class="comment-title">已买评价</view>
+			<view class="comment-count">1条</view>
+			<image class="comment-arrow" src="../../images/grey-arrow.png" />
+		</view>
+	</view>
+</view>
+
+<view class="opr-cnt">
+	<view class="opr-trolley">加入购物车</view>
+	<view class="opr-buy">立即购买</view>
+</view>
