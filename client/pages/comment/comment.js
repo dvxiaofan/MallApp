@@ -8,10 +8,10 @@ Page({
 			price: 480.5,
 			comments: [
 				{
-					icon: '../../images/xiaofan.png', 
-					uName: 'xiaofan', 
+					avatar: '../../images/xiaofan.png', 
+					username: 'xiaofan', 
 					time: '2018-06-22', 
-					text: '非常好， 棒极了，下次还买'
+					content: '非常好， 棒极了，下次还买'
 				}
 			]
 		},
