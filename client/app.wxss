@@ -1,5 +1,9 @@
 /**app.wxss**/
 
+page {
+  background-color: #f9f9f9;
+}
+
 .bg {
   position: absolute;
   top: 0;
@@ -9,6 +13,59 @@
   z-index: -1;
 }
 
-page {
-  background-color: #f9f9f9;
+.unlogin-card {
+  display: flex;
+  align-items: center;
+  margin: 50rpx 27rpx 0;
+  height: 200rpx;
+  background: #fff;
+  box-shadow: 0 2rpx 13rp 5rpx rgba(0, 0, 0, .02);
+  border-radius: 13rpx;
+}
+
+.unlogin-head {
+  flex-shrink: 0;
+  margin-left: 53rpx;
+  height: 100rpx;
+  width: 100rpx;
+  background: #F5E069;
+  border-radius: 50%;
+}
+
+.unlogin-info {
+  flex: 1;
+  margin-left: 31rpx;
+}
+
+.unlogin-text {
+  font-size: 34rpx;
+  line-height: 48rpx;
+  color: rgba(29, 29, 38, .8);
+  font-weight: bold;
+}
+
+.unlogin-tips {
+  margin-top: 6rpx;
+  font-size: 24rpx;
+  line-height: 33rpx;
+  color: #8b8b8b;
+}
+
+.unlogin-btn {
+  margin: 34rpx auto 0;
+  width: 250rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f9e615;
+  outline: none;
+  border: none;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+.unlogin-btn::after {
+  border: none;
 }

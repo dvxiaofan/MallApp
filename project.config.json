@@ -23,7 +23,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -36,6 +36,11 @@
 					"name": "评价页",
 					"pathName": "pages/comment/comment",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/user/user"
 				}
 			]
 		}

@@ -1,1 +1,12 @@
 <image class="bg" src="../../images/bg.png" />
+
+<view wx:if="{{!userInfo}}">
+	<view class="unlogin-card">
+		<view class="unlogin-head"></view>
+		<view class="unlogin-info">
+			<view class="unlogin-text">未登录</view>
+			<view class="unlogin-tips">点击微信登录后可方便购物</view>
+		</view>
+	</view>
+	<button class="unlogin-btn" open-type="getUserInfo" bind:getuserinfo="onTapLogin">微信登录</button>
+</view>
