@@ -10,3 +10,21 @@
 	</view>
 	<button class="unlogin-btn" open-type="getUserInfo" bind:getuserinfo="onTapLogin">微信登录</button>
 </view>
+
+<view class="user-card" wx:else>
+	<view class="user-info">
+		<image class="user-head" src="{{userInfo.avatarUrl}}" />
+		<view class="user-name">{{userInfo.nickName}}</view>
+	</view>
+	<view class="user-split"></view>
+	<view class="user-options">
+		<view class="option" bind:tap="onTapAddress">
+			<view class="option-title">收货地址</view>
+			<image class="option-arrow" src="../../images/grey-arrow.png" />
+		</view>
+		<view class="option" bind:tap="onTapKf">
+			<view class="option-title">联系客服</view>
+			<image class="option-arrow" src="../../images/grey-arrow.png" />
+		</view>
+	</view>
+</view>

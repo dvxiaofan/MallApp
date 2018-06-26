@@ -1,6 +1,32 @@
+
+const app = getApp()
+
 Page({
 	data:{
 		userInfo: null,
+	},
+	onTapLogin() {
+		app.login({
+			success: ({ userInfo }) => {
+				this.setData({
+					userInfo
+				})
+			}
+		})
+	},
+
+	onTapAddress() {
+		wx.showToast({
+			icon: 'none',
+			title: 'notitle'
+		})
+	},
+
+	onTapKf() {
+		wx.showToast({
+			icon: 'none',
+			title: 'notitle'
+		})
 	},
 	onLoad:function(options){
 		// 生命周期函数--监听页面加载
