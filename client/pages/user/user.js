@@ -1,18 +1,10 @@
+const qcloud = require('../../vendor/wafer2-client-sdk/index.js')
+const config = require('../../config.js')
 
-const app = getApp()
 
 Page({
-	data:{
+	data: {
 		userInfo: null,
-	},
-	onTapLogin() {
-		app.login({
-			success: ({ userInfo }) => {
-				this.setData({
-					userInfo
-				})
-			}
-		})
 	},
 
 	onTapAddress() {
@@ -28,6 +20,61 @@ Page({
 			title: 'notitle'
 		})
 	},
+
+	onTapLogin: function(e) {
+		this.doQcloudLogin({
+			success: ({ userInfo }) => {
+				this.setState({
+					userInfo
+				})				
+			}
+		})
+		console.log(this.userInfo);
+	},
+
+	doQcloudLogin({ success, error }) {
+		qcloud.login({
+			success: result => {
+				if (result) {
+					let userInfo = result
+					success && success({
+						userInfo
+					})
+					console.log('success');
+					
+				} else {
+					// 如果不是首次登录，不会返回用户信息，请求用户信息接口获取
+					this.getUserInfo({ success, error })	
+					console.log('fail')				
+				}
+			},
+			fail: () => {
+				error && error()
+			}
+		})
+	},
+
+	getUserInfo({ success, error }) {
+    qcloud.request({
+      url: config.service.requestUrl,
+      login: true,
+      success: result => {
+        let data = result.data
+         if (!data.code) {
+          let userInfo = data.data
+           success && success({
+            userInfo
+          })
+        } else {
+          error && error()
+        }
+      },
+      fail: () => {
+        error && error()
+      }
+    })
+  },
+
 	onLoad:function(options){
 		// 生命周期函数--监听页面加载
 	},
