@@ -23,29 +23,31 @@ Page({
 
 	onTapLogin: function(e) {
 		this.doQcloudLogin({
+			
 			success: ({ userInfo }) => {
 				this.setState({
 					userInfo
 				})				
+				console.log(this.userInfo);
 			}
 		})
-		console.log(this.userInfo);
 	},
 
 	doQcloudLogin({ success, error }) {
 		qcloud.login({
 			success: result => {
+				console.log('doQcloudLogin');
 				if (result) {
 					let userInfo = result
 					success && success({
 						userInfo
 					})
-					console.log('success');
+					console.log('doQcloudLogin success');
 					
 				} else {
 					// 如果不是首次登录，不会返回用户信息，请求用户信息接口获取
 					this.getUserInfo({ success, error })	
-					console.log('fail')				
+					console.log('doQcloudLogin fail')				
 				}
 			},
 			fail: () => {
@@ -55,6 +57,8 @@ Page({
 	},
 
 	getUserInfo({ success, error }) {
+		console.log('getUserInfo');
+		
     qcloud.request({
       url: config.service.requestUrl,
       login: true,
